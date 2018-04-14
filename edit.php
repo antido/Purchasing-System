@@ -1,5 +1,5 @@
 <?php 
-	include 'config.php';
+	include 'db_connection/config.php';
 	session_start();
 
 	if(isset($_POST['edit'])){

@@ -1,5 +1,5 @@
 <?php
-	include 'config.php';
+	include 'db_connection/config.php';
 	session_start();
 
 	if(isset($_POST['add'])){
@@ -21,11 +21,16 @@
 		$sql = "INSERT INTO users (first_name, middle_name, last_name, age, gender, contact_number, home_address, profession, createdDate, updatedDate) VALUES ('$fName', '$mName', '$lName', '$age', '$gender', '$contactNum', '$homeAddr', '$profession', now(), now())";
 		$result = mysqli_query($conn, $sql);
 
-		$sql2 = "INSERT INTO accounts (username, password, createdDate, updatedDate) VALUES ('$contactNum', '$lName', now(), now())";
-		$result2 = mysqli_query($conn, $sql2);
+		if($result){
+			$userID = mysqli_insert_id($conn);
 
-		header('Location: main.php?add_user=success');
-		exit();
+			$sql2 = "INSERT INTO accounts (user_id, username, password, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$contactNum', '$lName', now(), now())";
+			$result2 = mysqli_query($conn, $sql2);
+
+			header('Location: main.php?add_user=success');
+			exit();
+		}
+
 	}else{
 		header('Location: main.php?add_user=failed');
 		exit();
