@@ -14,7 +14,7 @@
 				</div>
 				<div class="col-md">
 					<form action="login.php" method="POST">
-						<h2 class="text-center">Login</h2>
+						<h2 class="text-center">Welcome</h2>
 						<div class="form-group">
 							<label>Username:</label>
 							<input type="text" class="form-control" name="username" placeholder="Enter Username" required>
@@ -25,6 +25,11 @@
 						</div>
 						<div class="form-group">
 							<input type="submit" class="form-control btn-primary" name="login" value="Login">
+						</div>
+					</form>
+					<form action="register_user.php">
+						<div class="form-group">
+							<input type="submit" class="form-control btn btn-secondary" name="register" value="Register Account">
 						</div>
 					</form>
 				</div>
