@@ -1,5 +1,5 @@
 <?php
-	include 'config.php';
+	include 'db_connection/config.php';
 	session_start();
 
 	if(!isset($_SESSION['user']) && $_SESSION['logged_in'] == false){
@@ -48,14 +48,14 @@
 				<tbody>
 					<tr>
 						<td><?php echo $row['user_id']; ?></td>
-						<td><?php echo $row['first_name']; ?></td>
+						<td><?php echo $row['first_name'] .' '. $row['middle_name'] .' '. $row['last_name']; ?></td>
 						<td><?php echo $row['age']; ?></td>
 						<td><?php echo $row['contact_number']; ?></td>
 						<td><?php echo $row['profession']; ?></td>
 						<td>
 							<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#viewModal">View</button>
 							<a class="btn btn-primary" href="edit_user.php?edit=<?php echo $row['user_id']; ?>">Edit</a>
-							<a class="btn btn-danger" href="#">Delete</a>
+							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="delete.php?delete=<?php echo $row['user_id']; ?>">Delete</a>
 						</td>
 					</tr>
 				</tbody>
