@@ -1,5 +1,5 @@
 <?php
-	include 'db_connection/config.php';
+	include '../db_connection/config.php';
 	session_start();
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -15,14 +15,14 @@
 			$_SESSION['user'] = $user;
 			$_SESSION['logged_in'] = true;
 
-			header('Location: main.php?login=success');
+			header('Location: ../main.php?login=success');
 			exit();
 		}else{
-			header('Location: index.php?login=failed');
+			header('Location: ../index.php?login=failed');
 			exit();
 		}
 	}else{
-		header('Location: index.php?login=failed');
+		header('Location: ../index.php?login=failed');
 		exit();
 	}
 ?>

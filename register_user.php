@@ -17,7 +17,7 @@
 				<div class="col-md">
 				</div>
 				<div class="col-md">
-					<form action="register.php" method="POST">
+					<form action="model/register.php" method="POST">
 						<h2 class="text-center text-primary">Registration Form</h2>
 						<div class="form-group mt-5">
 							<label>Firstname:</label>

@@ -55,7 +55,7 @@
 						<td>
 							<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#viewModal">View</button>
 							<a class="btn btn-primary" href="edit_user.php?edit=<?php echo $row['user_id']; ?>">Edit</a>
-							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="delete.php?delete=<?php echo $row['user_id']; ?>">Delete</a>
+							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="model/delete.php?delete=<?php echo $row['user_id']; ?>">Delete</a>
 						</td>
 					</tr>
 				</tbody>

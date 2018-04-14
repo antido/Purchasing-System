@@ -40,7 +40,7 @@
 				</div>
 				<div class="col-md">
 					<?php while($row = $result->fetch_assoc()) { ?>
-					<form action="edit.php" method="POST">
+					<form action="model/edit.php" method="POST">
 						<h2>Update Data</h2>
 						<div class="form-group">
 							<input type="hidden" class="form-control" name="id" value="<?php echo $row['user_id']; ?>">

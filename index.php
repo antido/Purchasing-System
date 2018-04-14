@@ -13,7 +13,7 @@
 				<div class="col-md">
 				</div>
 				<div class="col-md">
-					<form action="login.php" method="POST">
+					<form action="model/login.php" method="POST">
 						<h2 class="text-center">Welcome</h2>
 						<div class="form-group">
 							<label>Username:</label>
