@@ -1,5 +1,5 @@
 <?php
-	include 'db_connection/config.php';
+	include '../db_connection/config.php';
 	session_start();
 
 	if(isset($_POST['add'])){
@@ -27,12 +27,12 @@
 			$sql2 = "INSERT INTO accounts (user_id, username, password, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$contactNum', '$lName', now(), now())";
 			$result2 = mysqli_query($conn, $sql2);
 
-			header('Location: main.php?add_user=success');
+			header('Location: ../main.php?add_user=success');
 			exit();
 		}
 
 	}else{
-		header('Location: main.php?add_user=failed');
+		header('Location: ../main.php?add_user=failed');
 		exit();
 	}
 ?>

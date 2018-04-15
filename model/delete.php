@@ -1,5 +1,5 @@
 <?php
-	include 'db_connection/config.php';
+	include '../db_connection/config.php';
 	session_start();
 
 	if(isset($_GET['delete'])){
@@ -14,13 +14,13 @@
 			$sql2 = "DELETE FROM users WHERE user_id = '$id'";
 			$result = mysqli_query($conn, $sql2);
 
-			header('Location: main.php?delete_data=success');
+			header('Location: ../main.php?delete_data=success');
 			exit();
 		}
 
 
 	}else{
-		header('Location: main.php?delete_data=failed');
+		header('Location: ../main.php?delete_data=failed');
 		exit();
 	}
 ?>

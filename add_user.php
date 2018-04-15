@@ -29,7 +29,7 @@
 				<div class="col-md">
 				</div>
 				<div class="col-md">
-					<form action="add.php" method="POST">
+					<form action="model/add.php" method="POST">
 						<h2 class="text-center">Create User</h2>
 						<div class="form-group">
 							<label>Firstname:</label>

@@ -1,5 +1,5 @@
 <?php
-	include 'db_connection/config.php';
+	include '../db_connection/config.php';
 	session_start();
 
 	if(isset($_POST['register'])){
@@ -21,11 +21,11 @@
 			$sql2 = "INSERT INTO accounts (user_id, username, password, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$contactNum', '$lName', now(), now())";
 			$result = mysqli_query($conn, $sql2);
 
-			header('Location: index.php?registration=success');
+			header('Location: ../index.php?registration=success');
 			exit();
 		}
 	}else{
-		header('Location: index.php?registration=failed');
+		header('Location: ../index.php?registration=failed');
 		exit();
 	}
 ?>

@@ -6,7 +6,7 @@
 				<a class="nav-link active" href="main.php">Main</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="logout.php">Logout</a>
+				<a class="nav-link" href="model/logout.php">Logout</a>
 			</li>
 		</ul>
 	</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2018 at 05:12 AM
+-- Generation Time: Apr 15, 2018 at 05:31 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -30,19 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accounts` (
   `account_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `username` varchar(45) CHARACTER SET utf8 NOT NULL,
   `password` varchar(45) CHARACTER SET utf8 NOT NULL,
   `createdDate` datetime DEFAULT NULL,
   `updatedDate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `accounts`
---
-
-INSERT INTO `accounts` (`account_id`, `username`, `password`, `createdDate`, `updatedDate`) VALUES
-(1, 'christ', 'antido', '2018-04-11 00:00:00', '2018-04-11 00:00:00'),
-(2, '09726347876', 'Manalo', '2018-04-12 19:23:53', '2018-04-12 19:23:53');
 
 -- --------------------------------------------------------
 
@@ -65,14 +58,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `first_name`, `middle_name`, `last_name`, `age`, `gender`, `contact_number`, `home_address`, `profession`, `createdDate`, `updatedDate`) VALUES
-(1, 'Christian', 'Lerry', 'Antido', 23, 'Male', '09296487564', 'Lower Fairview Baguio City', 'Junior Programmer', '2018-04-11 00:00:00', '2018-04-11 00:00:00'),
-(2, 'Jose', 'Miguel', 'Manalo', 56, 'Female', '09726347876', 'Lower Bonifacio Street Baguio City', 'Engineer', '2018-04-12 19:23:53', '2018-04-12 19:23:53');
-
---
 -- Indexes for dumped tables
 --
 
@@ -82,7 +67,8 @@ INSERT INTO `users` (`user_id`, `first_name`, `middle_name`, `last_name`, `age`,
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`account_id`),
   ADD UNIQUE KEY `account_id` (`account_id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `users`
@@ -99,13 +85,23 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
