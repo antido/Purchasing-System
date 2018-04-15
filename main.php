@@ -54,7 +54,7 @@
 						<td><?php echo $row['contact_number']; ?></td>
 						<td><?php echo $row['profession']; ?></td>
 						<td>
-							<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#viewModal">View</button>
+							<a class="btn btn-secondary" data-toggle="modal" href="#viewModal" data-id="<?php echo $row['user_id']; ?>">View</button>
 							<a class="btn btn-primary" href="edit_user.php?edit=<?php echo $row['user_id']; ?>">Edit</a>
 							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="model/delete.php?delete=<?php echo $row['user_id']; ?>">Delete</a>
 						</td>
@@ -76,6 +76,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
+					<!-- Fetched Data to be displayed -->
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -84,29 +85,26 @@
 		</div>		
 	</div>
 
-	<!-- Edit Data Modal -->
-	<!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="editModalLabel">Update Data</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-				</div>
-				<div class="modal-footer">
-				</div>
-			</div>
-		</div>
-	</div> -->
-
 	<footer class="footer mt-5"> 
 		<?php include 'includes/footer.php'; ?>
 	</footer>
 
 	<script src="assets/js/jquery-3.3.1.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#viewModal').on('show.bs.modal', function (e){
+				var userId = $(e.relatedTarget).data('id');
+				$.ajax({
+					type: 'POST',
+					url: 'model/view_modal.php',
+					data: 'userId=' + userId, 
+					success: function(data){
+		           		$(".modal-body").html(data);
+		        	}
+		    	});
+			});
+		});
+	</script>
 </body>
 </html>
