@@ -70,6 +70,10 @@
 							<span id='message'></span>
 						</div>
 						<div class="form-group">
+							<img class="form-control" src="model/captcha.php">
+							<input type="text" class="form-control" name="captcha" placeholder="Enter Captcha" require>
+						</div>
+						<div class="form-group">
 							<input type="submit" class="form-control btn btn-primary" id="register-user" name="register" value="Register">
 						</div>
 					</form>
