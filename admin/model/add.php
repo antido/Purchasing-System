@@ -19,7 +19,7 @@
 		if($result){
 			$userID = mysqli_insert_id($conn);
 
-			$sql2 = "INSERT INTO accounts (user_id, username, password, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$contactNum', '$lName', now(), now())";
+			$sql2 = "INSERT INTO accounts (user_id, username, password, account_type, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$contactNum', '$lName', 'Public', now(), now())";
 			$result2 = mysqli_query($conn, $sql2);
 
 			header('Location: ../main.php?add_user=success');
