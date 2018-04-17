@@ -8,14 +8,20 @@
 
 		$sql = "SELECT * FROM accounts WHERE username = '$user' AND password = '$pass'";
 		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array(MYSQLI_ASSOC, $result);
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$active = $row;
 		$count = mysqli_num_rows($result);
-		if($count == 1){
+		if($count == 1 && $row['account_type'] == 'Public'){
 			$_SESSION['user'] = $user;
 			$_SESSION['logged_in'] = true;
 
-			header('Location: ../main.php?login=success');
+			header('Location: ../public/main.php?login=success');
+			exit();
+		}else if($count == 1 && $row['account_type'] == 'Admin'){
+			$_SESSION['user'] = $user;
+			$_SESSION['logged_in'] = true;
+
+			header('Location: ../admin/main.php?login=success');
 			exit();
 		}else{
 			header('Location: ../index.php?login=failed');

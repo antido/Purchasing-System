@@ -22,7 +22,7 @@
 			if($result){
 				$userID = mysqli_insert_id($conn);
 
-				$sql2 = "INSERT INTO accounts (user_id, username, password, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$username', '$password', now(), now())";
+				$sql2 = "INSERT INTO accounts (user_id, username, password, account_type, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$username', '$password', 'Public', now(), now())";
 				$result = mysqli_query($conn, $sql2);
 
 				header('Location: ../index.php?registration=success');

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2018 at 05:31 AM
+-- Generation Time: Apr 17, 2018 at 09:00 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -33,8 +33,25 @@ CREATE TABLE `accounts` (
   `user_id` int(11) NOT NULL,
   `username` varchar(45) CHARACTER SET utf8 NOT NULL,
   `password` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `account_type` varchar(45) CHARACTER SET utf8 NOT NULL,
   `createdDate` datetime DEFAULT NULL,
   `updatedDate` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stocks`
+--
+
+CREATE TABLE `stocks` (
+  `stock_id` int(11) NOT NULL,
+  `stock_name` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `stock_quantity` int(11) NOT NULL,
+  `stock_price` float NOT NULL,
+  `stock_description` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `createdDate` datetime NOT NULL,
+  `updatedDate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -57,6 +74,21 @@ CREATE TABLE `users` (
   `updatedDate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_purchase`
+--
+
+CREATE TABLE `user_purchase` (
+  `user_purchase_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `stock_id` int(11) NOT NULL,
+  `purchase_quantity` int(11) NOT NULL,
+  `createdDate` datetime NOT NULL,
+  `updatedDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -71,11 +103,26 @@ ALTER TABLE `accounts`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `stocks`
+--
+ALTER TABLE `stocks`
+  ADD PRIMARY KEY (`stock_id`),
+  ADD UNIQUE KEY `stock_id` (`stock_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `user_purchase`
+--
+ALTER TABLE `user_purchase`
+  ADD PRIMARY KEY (`user_purchase_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `stock_id` (`stock_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -88,10 +135,22 @@ ALTER TABLE `accounts`
   MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `stocks`
+--
+ALTER TABLE `stocks`
+  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user_purchase`
+--
+ALTER TABLE `user_purchase`
+  MODIFY `user_purchase_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -102,6 +161,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `accounts`
   ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_purchase`
+--
+ALTER TABLE `user_purchase`
+  ADD CONSTRAINT `user_purchase_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `user_purchase_ibfk_2` FOREIGN KEY (`stock_id`) REFERENCES `stocks` (`stock_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
