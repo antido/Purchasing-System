@@ -28,7 +28,7 @@
 						<a class="nav-link active" href="main.php">Main</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Stocks</a>
+						<a class="nav-link" href="../stocks/stock_main.php">Stocks</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="model/logout.php">Logout</a>
@@ -37,6 +37,26 @@
 			</div>
 		</nav>
 	</header>
+
+	<main>
+		<div class="container-fluid mt-5">
+			<table class="table table-striped table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th>Purchase ID</th>
+						<th>Purchase Name</th>
+						<th>Purchase Quantity</th>
+						<th>Purchase Total Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
 
 	<footer class="footer mt-5">
 		<?php include '../includes/footer.php'; ?>
