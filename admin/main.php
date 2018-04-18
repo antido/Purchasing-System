@@ -17,6 +17,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
 </head>
 <body>
@@ -27,6 +28,15 @@
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link active" href="main.php">Main</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../stocks/add_stock_admin.php">Add Stocks</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../stocks/update_stock_admin.php">Update Stocks</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Purchases Logs</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="model/logout.php">Logout</a>
