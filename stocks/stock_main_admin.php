@@ -73,8 +73,8 @@
 						<td><?php echo $row['supplier_id']; ?></td>
 						<td>
 							<a class="btn btn-secondary" data-toggle="modal" href="#viewStockModal" data-id="<?php echo $row['stock_id']; ?>">View</a>
-							<a class="btn btn-primary" href="#">Update</a>
-							<a class="btn btn-danger" href="#">Delete</a>
+							<a class="btn btn-primary" href="update_stock_admin.php?stockId=<?php echo $row['stock_id']; ?>">Update</a>
+							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="model/delete_stock.php?stockId=<?php echo $row['stock_id']; ?>">Delete</a>
 						</td>
 					</tr>
 				</tbody>

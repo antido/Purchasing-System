@@ -3,10 +3,12 @@
 	session_start();
 
 	if(isset($_POST['stockId'])){
+
 		$id = $_POST['stockId'];
 
 		$sql = "SELECT * FROM stocks WHERE stock_id = '$id'";
 		$result = mysqli_query($conn, $sql);
+		
 		if($result->num_rows > 0){
 			while($row = $result->fetch_assoc()){
 				echo 
