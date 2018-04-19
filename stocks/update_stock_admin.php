@@ -6,7 +6,7 @@
 		session_unset();
 		session_destroy();
 
-		header('Location: ../index.php?login=error');
+		header('Location: ../index.php?access=error');
 		exit();
 	}
 ?>
@@ -16,23 +16,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
 </head>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="main.php">System</a>
+			<a class="navbar-brand" href="update_stock_admin.php">Stock</a>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" href="main.php">Main</a>
+						<a class="nav-link" href="add_stock_admin.php">Add Stock</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../stocks/stock_main.php">Stocks</a>
+						<a class="nav-link active" href="update_stock_admin.php">Update Stock</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="model/logout.php">Logout</a>
+						<a class="nav-link" href="../admin/main.php">Admin</a>
 					</li>
 				</ul>
 			</div>
@@ -40,26 +41,25 @@
 	</header>
 
 	<main>
-		<div class="container-fluid mt-5">
-			<table class="table table-striped table-bordered">
-				<thead class="thead-dark">
-					<tr>
-						<th>Purchase ID</th>
-						<th>Purchase Name</th>
-						<th>Purchase Quantity</th>
-						<th>Purchase Total Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-6">
+					<form action="model/update_stock.php" method="POST">
+						<h2 class="text-center">Update Stock</h2>
+						<div class="form-group">
+						
+						</div>
+					</form>
+				</div>
+				<div class="col-md-3">
+				</div>
+			</div>
 		</div>
 	</main>
 
-	<footer class="footer mt-5">
+	<footer class="container-fluid mt-5">
 		<?php include '../includes/footer.php'; ?>
 	</footer>
 
