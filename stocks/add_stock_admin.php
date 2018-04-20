@@ -23,14 +23,17 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="">Stock</a>
+			<a class="navbar-brand" href="stock_main_admin.php">Stock</a>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="stock_main_admin.php">Stock Dashboard</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link active" href="add_stock_admin.php">Add Stock</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="update_stock_admin.php">Update Stock</a>
+						<a class="nav-link" href="#">Stock Logs</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../admin/main.php">Admin</a>
