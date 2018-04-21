@@ -32,6 +32,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../stocks/stock_main_admin.php">Stocks</a>
 					</li>
+					<li clas="nav-item">
+						<a class="nav-link" href="../supplier/supplier_main_admin.php">Supplier</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Purchases Logs</a>
 					</li>

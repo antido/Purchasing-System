@@ -114,7 +114,7 @@
 				var stockId = $(e.relatedTarget).data('id');
 				$.ajax({
 					type: 'POST',
-					url: 'model/view_stock_model.php',
+					url: 'model/view_stock_modal.php',
 					data: 'stockId=' + stockId,
 					success: function(data){
 						$('.modal-body').html(data);

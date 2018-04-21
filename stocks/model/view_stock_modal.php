@@ -15,19 +15,19 @@
 				"
 					<table>
 						<tr>
-							<td>Stock Name</td>
+							<td>Stock Name:</td>
 							<td>$row[stock_name]</td>
 						</tr>
 						<tr>
-							<td>Stock Description</td>
+							<td>Stock Description:</td>
 							<td>$row[stock_description]</td>
 						</tr>
 						<tr>
-							<td>Stock Quantity</td>
+							<td>Stock Quantity:</td>
 							<td>$row[stock_quantity]</td>
 						</tr>
 						<tr>
-							<td>Stock Price</td>
+							<td>Stock Price:</td>
 							<td>$row[stock_price]</td>
 						</tr>
 					</table>

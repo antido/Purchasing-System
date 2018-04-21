@@ -45,7 +45,7 @@
 						<h2 class="text-center">Update Stock Data</h2>
 						<?php while($row = $result->fetch_assoc()) { ?>
 							<div class="form-group">
-								<input type="hidden" class="form-control" name="id" value="<?php echo['stock_id']; ?>">
+								<input type="hidden" class="form-control" name="id" value="<?php echo $row['stock_id']; ?>">
 							</div>
 							<div class="form-group">
 								<input type="hidden" class="form-control" name="supplierId" value="<?php echo $row['supplier_id']; ?>">

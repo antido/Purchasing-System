@@ -12,10 +12,10 @@
 		$sql = "INSERT INTO stocks (supplier_id, stock_name, stock_quantity, stock_price, stock_description, createdDate, updatedDate) VALUES ('$supplier', '$stockName', '$stockQty', '$stockPrice', '$stockDesc', now(), now())";
 		$result = mysqli_query($conn, $sql);
 
-		header('Location: ../add_stock_admin.php?adding_stock=success');
+		header('Location: ../stock_main_admin.php?adding_stock=success');
 		exit();
 	}else{
-		header('Location: ../add_stock_admin.php?adding_stock=failed');
+		header('Location: ../stock_main_admin.php?adding_stock=failed');
 		exit();
 	}
 ?>
