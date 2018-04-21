@@ -30,9 +30,6 @@
 						<a class="nav-link active" href="supplier_main_admin.php">Supplier Dashboard</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="add_supplier_admin.php">Add Supplier</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="../admin/main.php">Admin</a>
 					</li>
 				</ul>
@@ -49,6 +46,7 @@
 				if($result->num_rows > 0){
 				}
 			?>
+			<a class="btn btn-success" href="add_supplier_admin.php">Add</a>
 			<table class="table table-striped table-bordered">
 				<thead class="thead-dark">
 					<tr>

@@ -30,9 +30,6 @@
 						<a class="nav-link" href="supplier_main_admin.php">Supplier Dashboard</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="add_supplier_admin.php">Add Supplier</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="../admin/main.php">Admin</a>
 					</li>
 				</ul>

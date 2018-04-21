@@ -63,7 +63,7 @@
 						<td><?php echo $row['stock_description']; ?></td>
 						<td>₱ <?php echo $row['stock_price']; ?></td>
 						<td>
-							<a class="btn btn-success" data-toggle="modal" href="#purchaseModal">Purchase</a>
+							<a class="btn btn-success" data-toggle="modal" href="#purchaseModal" data-id="<?php echo $row['stock_id']; ?>">Purchase</a>
 						</td>
 					</tr>
 				</tbody>
@@ -96,5 +96,20 @@
 
 	<script src="../assets/js/jquery-3.3.1.js"></script>
 	<script src="../assets/js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#purchaseModal').on('show.bs.modal', function (e){
+				var stockId = $(e.relatedTarget).data('id');
+				$.ajax({
+					type: 'POST',
+					url: 'model/purchase_stock_public.php',
+					data: 'stockId=' + stockId,
+					success: function(data){
+						$('.modal-body').html(data);
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>
