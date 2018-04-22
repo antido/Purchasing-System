@@ -30,9 +30,6 @@
 						<a class="nav-link active" href="stock_main_admin.php">Stock Dashboard</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="add_stock_admin.php">Add Stock</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="#">Stock Logs</a>
 					</li>
 					<li class="nav-item">
@@ -52,6 +49,7 @@
 				if($result->num_rows > 0){
 				}
 			?>
+			<a class="btn btn-success" href="add_stock_admin.php">Add</a>
 			<table class="table table-striped table-bordered">
 				<thead class="thead-dark">
 					<tr>
