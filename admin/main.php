@@ -55,7 +55,7 @@
 				if($result->num_rows > 0){
 				}
 			?>
-			<a class="btn btn-success" href="add_user.php">Add</a>
+			<a class="btn btn-success" data-toggle="modal" href="#addAccountModal">Add</a>
 			<table class="table table-striped table-bordered">
 				<thead class="thead-dark">
 					<tr>
@@ -105,6 +105,35 @@
 				</div>
 			</div>
 		</div>		
+	</div>
+
+	<!-- Add Accounts Modal -->
+	<div class="modal fade" id="addAccountModal" tabindex="-1" role="dialog" aria-labelledby="addAccountModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body modal-body-centered">
+					<h5 class="text-center">Create Account For:</h5>
+					<div class="row">
+						<div class="col-md-3">
+						</div>
+						<div class="col-md-6">
+							<a class="btn btn-success ml-4" href="add_user.php">Public</a>
+							<a class="btn btn-primary" href="add_admin.php">Admin</a>
+						</div>
+						<div class="col-md-3">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<footer class="footer mt-5"> 
