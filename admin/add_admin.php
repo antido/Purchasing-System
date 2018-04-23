@@ -6,7 +6,7 @@
 		session_unset();
 		session_destroy();
 
-		header('Location: ../index.php?login=error');
+		header('Location: ../index.php?access=error');
 		exit();
 	}
 ?>
@@ -14,8 +14,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
@@ -27,13 +27,13 @@
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" href="main.php">Main</a>
+						<a class="nav-link" href="main.php">Main</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="model/logout.php">Logout</a>
+						<a class="nav-link" href="../model/logout.php">Logout</a>
 					</li>
 				</ul>
-			</div>
+			</div> 
 		</nav>
 	</header>
 
@@ -43,9 +43,10 @@
 				<div class="col-md">
 				</div>
 				<div class="col-md">
-					<form action="model/add.php" method="POST">
-						<h2 class="text-center">Create Public Account</h2>
-						<div class="form-group">
+					<form action="model/add_admin.php" method="POST">
+						<h2 class="text-center">Create Admin Account</h2>
+						<h5 class="text-success mt-5">Personal Information</h5>
+						<div class="form-group mt-3">
 							<label>Firstname:</label>
 							<input type="text" class="form-control" name="fName" placeholder="Enter Firstname" required>
 						</div>
@@ -81,8 +82,20 @@
 							<label>Profession:</label>
 							<input type="text" class="form-control" name="profession" placeholder="Enter Profession" required>
 						</div>
+						<h5 class="text-success mt-5">Register Account</h5>
+						<div class="form-group mt-3">
+							<label>Admin Username:</label>
+							<input type="text" class="form-control" name="username" placeholder="Enter Admin Username">
+						</div>
 						<div class="form-group">
-							<input type="submit" class="form-control btn-success" name="add" value="Add">
+							<label>Admin Password:</label>
+							<input type="password" class="form-control" name="password" id="pass" placeholder="Enter Admin Password">
+							<label class="mt-3">Confirm Admin Password:</label>
+							<input type="password" class="form-control" name="confirmPassword" id="confirm-password" placeholder="Re-type Admin Password">
+							<span id="message"></span>
+						</div>
+						<div class="form-group">
+							<input type="submit" class="form-control btn-success" id="add-admin" name="add" value="Add">
 						</div>
 					</form>
 				</div>
@@ -98,5 +111,30 @@
 
 	<script src="../assets/js/jquery-3.3.1.js"></script>
 	<script src="../assets/js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#pass, #confirm-password').on('keyup', function(){
+				if($('#pass').val() != $('#confirm-password').val()){
+					$('#message').html('Not Matching').css('color', 'red');
+					$('#add-admin').attr('disabled', true);
+				}else{
+					$('#message').html('Matching').css('color', 'green');
+					$('#add-admin').attr('disabled', false);
+				}
+			});
+		});
+	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

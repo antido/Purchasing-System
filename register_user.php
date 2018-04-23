@@ -67,7 +67,7 @@
 							<input type="password" class="form-control" id="password" name="password" placeholder="Enter Preferred Password" required>
 							<label>Confirm Password:</label>
 						    <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Re-type Password">
-							<span id='message'></span>
+							<span id="message"></span>
 						</div>
 						<div class="form-group">
 							<img class="form-control" src="model/captcha.php">
