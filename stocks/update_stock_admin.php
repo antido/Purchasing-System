@@ -60,7 +60,7 @@
 							</div>
 							<div class="form-group">
 								<label>Stock Price:</label>
-								<input type="text" class="form-control" name="stockPrice" value="<?php echo $row['stock_price']; ?>">
+								<input type="text" class="form-control" name="stockPrice" value="₱ <?php echo $row['stock_price']; ?>">
 							</div>
 							<div class="form-group">
 								<label>Stock Description:</label>

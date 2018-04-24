@@ -122,8 +122,8 @@
 						<div class="col-md-3">
 						</div>
 						<div class="col-md-6">
-							<a class="btn btn-success ml-4" href="add_user.php">Public</a>
-							<a class="btn btn-primary" href="add_admin.php">Admin</a>
+							<a class="btn btn-success ml-4" href="add_account_user.php">Public</a>
+							<a class="btn btn-primary" href="add_account_admin.php">Admin</a>
 						</div>
 						<div class="col-md-3">
 						</div>
