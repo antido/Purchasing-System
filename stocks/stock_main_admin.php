@@ -30,7 +30,7 @@
 						<a class="nav-link active" href="stock_main_admin.php">Stock Dashboard</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Stock Logs</a>
+						<a class="nav-link" href="stock_logs_admin.php">Stock Logs</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../admin/main.php">Admin</a>
@@ -67,7 +67,7 @@
 						<td><?php echo $row['stock_id']; ?></td>
 						<td><?php echo $row['stock_name']; ?></td>
 						<td><?php echo $row['stock_quantity']; ?></td>
-						<td><?php echo $row['stock_price']; ?></td>
+						<td>₱ <?php echo $row['stock_price']; ?></td>
 						<td><?php echo $row['supplier_id']; ?></td>
 						<td>
 							<a class="btn btn-secondary" data-toggle="modal" href="#viewStockModal" data-id="<?php echo $row['stock_id']; ?>">View</a>

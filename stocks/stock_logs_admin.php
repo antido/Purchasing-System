@@ -1,14 +1,4 @@
-<?php 
-	include '../db_connection/config.php';
-	session_start();
-
-	if(!isset($_SESSION['user']) && $_SESSION['logged_in'] == false){
-		session_unset();
-		session_destroy();
-
-		header('Location: ../index.php?login=error');
-		exit();
-	}
+<?php
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,23 +6,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
 </head>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="main.php">System</a>
+			<a class="navbar-brand" href="stock_main_admin.php">Stock</a>
 			<div class="collapse navbar-collapse">
-				<ul class="navbar-nav">
+				<ul class="navbar-nav"> 
 					<li class="nav-item">
-						<a class="nav-link active" href="main.php">Main</a>
+						<a class="nav-link" href="stock_main_admin.php">Stock Dashboard</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../stocks/stock_main.php">Stocks</a>
+						<a class="nav-link active" href="stock_logs_admin.php">Stock Logs</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="model/logout.php">Logout</a>
+						<a class="nav-link" href="../admin/main.php">Admin</a>
 					</li>
 				</ul>
 			</div>
@@ -40,15 +31,13 @@
 	</header>
 
 	<main>
-		<div class="container-fluid mt-5">
-			<h3 class="text-center">Purchase Log</h3>
-			<table class="table table-striped table-bordered mt-4">
-				<thead class="thead-dark">
+		<div class="container mt-5">
+			<table class="table table-striped table-bordered">
+				<thead class="thead-dark"> 
 					<tr>
-						<th>Purchase ID</th>
-						<th>Purchase Name</th>
-						<th>Purchase Quantity</th>
-						<th>Purchase Total Price</th>
+						<th>Stock ID</th>
+						<th>Stock Name</th>
+						<th>Stock Quantity</th>
 					</tr>
 				</thead>
 				<tbody>

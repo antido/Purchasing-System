@@ -12,7 +12,7 @@
 			while($row = $result->fetch_assoc()){
 				echo 
 				"
-				<form>
+				<form action='purchase_stock.php' method='POST'>
 					<div class='form-group'>
 						<input type='hidden' class='form-control' name='stockId' value='$row[stock_id]'>
 					</div>
