@@ -52,6 +52,7 @@
 						<th>Stock ID</th>
 						<th>Stock Name</th>
 						<th>Stock Description</th>
+						<th>Stock Quantity</th>
 						<th>Stock Price</th>
 						<th>Action</th>
 					</tr>
@@ -62,6 +63,7 @@
 						<td><?php echo $row['stock_id']; ?></td>
 						<td><?php echo $row['stock_name']; ?></td>
 						<td><?php echo $row['stock_description']; ?></td>
+						<td><?php echo $row['stock_quantity']; ?></td>
 						<td>₱ <?php echo $row['stock_price']; ?></td>
 						<td>
 							<a class="btn btn-success" data-toggle="modal" href="#purchaseModal" data-id="<?php echo $row['stock_id']; ?>">Purchase</a>
