@@ -30,32 +30,47 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../stocks/stock_main.php">Stocks</a>
-					</li>
+					</li>		
 					<li class="nav-item">
 						<a class="nav-link" href="model/logout.php">Logout</a>
-					</li>
+					</li>		
 				</ul>
 			</div>
+			<span class="text-primary">Welcome: <?php echo $_SESSION['user']; ?></span>
 		</nav>
 	</header>
 
 	<main>
 		<div class="container-fluid mt-5">
-			<h3 class="text-center">Purchase Log</h3>
+			<h3 class="text-center">Purchase Logs</h3>
+			<?php
+				$sql = "SELECT * FROM user_purchase up INNER JOIN stocks s ON up.stock_id = s.stock_id WHERE user_id = '".$_SESSION['userId']."'";
+				$result = mysqli_query($conn, $sql);
+
+				if($result->num_rows > 0){
+				}
+			?>
 			<table class="table table-striped table-bordered mt-4">
 				<thead class="thead-dark">
 					<tr>
 						<th>Purchase ID</th>
+						<th>Purchase Date</th>
 						<th>Purchase Name</th>
 						<th>Purchase Quantity</th>
 						<th>Purchase Total Price</th>
 					</tr>
 				</thead>
+				<?php while($row = $result->fetch_assoc()){ ?>
 				<tbody>
 					<tr>
-						
+						<td><?php echo $row['user_purchase_id']; ?></td>
+						<td><?php echo $row['purchase_createdDate']; ?></td>
+						<td><?php echo $row['stock_name']; ?></td>
+						<td><?php echo $row['purchase_quantity']; ?></td>
+						<td>₱ <?php echo $row['purchase_quantity'] * $row['stock_price']; ?></td>
 					</tr>
 				</tbody>
+				<?php } ?>
 			</table>
 		</div>
 	</main>

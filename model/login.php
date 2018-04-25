@@ -14,12 +14,14 @@
 		if($count == 1 && $row['account_type'] == 'Public'){
 			$_SESSION['user'] = $user;
 			$_SESSION['logged_in'] = true;
+			$_SESSION['userId'] = $row['user_id'];
 
 			header('Location: ../public/main.php?login=success');
 			exit();
 		}else if($count == 1 && $row['account_type'] == 'Admin'){
 			$_SESSION['user'] = $user;
 			$_SESSION['logged_in'] = true;
+			$_SESSION['userId'] = $row['user_id'];
 
 			header('Location: ../admin/main.php?login=success');
 			exit();

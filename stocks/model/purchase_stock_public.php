@@ -12,7 +12,7 @@
 			while($row = $result->fetch_assoc()){
 				echo 
 				"
-				<form action='purchase_stock.php' method='POST'>
+				<form action='model/purchase_stock.php' method='POST'>
 					<div class='form-group'>
 						<input type='hidden' class='form-control' name='stockId' value='$row[stock_id]'>
 					</div>
@@ -26,7 +26,7 @@
 					</div>
 					<div class='form-group'>
 						<label>Stock Price:</label>
-						<input type='text' class='form-control' name='stockPrice' value='$row[stock_price]' disabled>
+						<input type='text' class='form-control' name='stockPrice' value='₱ $row[stock_price]' disabled>
 					</div>
 					<div class='form-group'>
 						<label>Stock Quantity:</label>
