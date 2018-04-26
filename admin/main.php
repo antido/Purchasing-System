@@ -43,6 +43,7 @@
 					</li>
 				</ul>
 			</div>
+			<span class="text-primary">Welcome Admin: <?php echo $_SESSION['user']; ?></span>
 		</nav>
 	</header>
 
