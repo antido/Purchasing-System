@@ -36,7 +36,7 @@
 					</li>		
 				</ul>
 			</div>
-			<span class="text-primary">Welcome: <?php echo $_SESSION['user']; ?></span>
+			<span class="text-primary">Welcome User: <?php echo $_SESSION['user']; ?></span>
 		</nav>
 	</header>
 
