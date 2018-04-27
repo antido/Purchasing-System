@@ -26,8 +26,10 @@
 			header('Location: ../admin/main.php?login=success');
 			exit();
 		}else{
-			header('Location: ../index.php?login=failed');
-			exit();
+			echo ("<script language='javascript'>
+					window.alert('Invalid Username or Password');
+					window.history.go(-1);
+				 </script>");
 		}
 	}else{
 		header('Location: ../index.php?login=failed');
