@@ -18,12 +18,12 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-	<title>Purchasing System</title>
+	<title>Purchasing System - Admin</title>
 </head>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="main.php">System</a>
+			<a class="navbar-brand" href="main.php">Admin</a>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav">
 					<li class="nav-item">
@@ -36,14 +36,14 @@
 						<a class="nav-link" href="../supplier/supplier_main_admin.php">Supplier</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Purchases Logs</a>
+						<a class="nav-link" href="public_purchase_logs.php">Purchases Logs</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="model/logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
-			<span class="text-primary">Welcome Admin: <?php echo $_SESSION['user']; ?></span>
+			<span class="text-primary">Welcome Admin: <br/><center><?php echo $_SESSION['user']; ?></center></span>
 		</nav>
 	</header>
 
