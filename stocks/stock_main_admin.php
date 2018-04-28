@@ -30,9 +30,6 @@
 						<a class="nav-link active" href="stock_main_admin.php">Stock Dashboard</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="stock_logs_admin.php">Stock Logs</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="../admin/main.php">Admin</a>
 					</li>
 				</ul>

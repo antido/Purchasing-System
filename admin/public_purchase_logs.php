@@ -30,14 +30,13 @@
 					<li class="nav-item">
 						<a class="nav-link" href="main.php">Main</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../stocks/stock_main_admin.php">Stocks</a>
-					</li>
-					<li clas="nav-item">
-						<a class="nav-link" href="../supplier/supplier_main_admin.php">Supplier</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="public_purchase_logs.php">Purchases Logs</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle active" href="#" id="inventoryDropdownMenuLink" data-toggle="dropdown">Inventory</a>
+						<div class="dropdown-menu" aria-labelledby="inventoryDropdownMenuLink">
+							<a class="dropdown-item" href="../stocks/stock_main_admin.php">Stocks</a>	
+							<a class="dropdown-item" href="../supplier/supplier_main_admin.php">Supplier</a>
+							<a class="dropdown-item active" href="public_purchase_logs.php">Purchases Logs</a>
+						</div>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="model/logout.php">Logout</a>
