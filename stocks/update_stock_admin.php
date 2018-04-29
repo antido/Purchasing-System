@@ -27,6 +27,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<script src="../assets/js/jquery-3.3.1.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
 </head>
@@ -60,7 +62,7 @@
 							</div>
 							<div class="form-group">
 								<label>Stock Price:</label>
-								<input type="text" class="form-control" name="stockPrice" value="₱ <?php echo $row['stock_price']; ?>">
+								<input type="text" class="form-control" name="stockPrice" value="<?php echo $row['stock_price']; ?>">
 							</div>
 							<div class="form-group">
 								<label>Stock Description:</label>
@@ -85,7 +87,5 @@
 		<?php include '../includes/footer.php'; ?>
 	</footer>
 
-	<script src="../assets/js/jquery-3.3.1.js"></script>
-	<script src="../assets/js/bootstrap.js"></script>
 </body>
 </html>

@@ -17,6 +17,10 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
+	<script src="../assets/js/jquery-3.3.1.js"></script>
+	<script src="../assets/js/datatables.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
 </head>
@@ -34,20 +38,21 @@
 					</li>
 				</ul>
 			</div>
+			<span class="text-primary">Welcome Admin: <br><center><?php echo $_SESSION['user']; ?></center></span>
 		</nav>
 	</header>
 
 	<main>
 		<div class="container-fluid mt-5">
 			<?php
-				$sql = "SELECT * FROM stocks";
+				$sql = "SELECT * FROM stocks st INNER JOIN supplier su ON st.supplier_id = su.supplier_id";
 				$result = mysqli_query($conn, $sql);
 
 				if($result->num_rows > 0){
 				}
 			?>
-			<a class="btn btn-success" href="add_stock_admin.php">Add</a>
-			<table class="table table-striped table-bordered">
+			<a class="btn btn-success mb-2" href="add_stock_admin.php">Add</a>
+			<table class="table table-striped table-bordered" id="stockAdminTable">
 				<thead class="thead-dark">
 					<tr>
 						<th>Stock ID</th>
@@ -65,7 +70,7 @@
 						<td><?php echo $row['stock_name']; ?></td>
 						<td><?php echo $row['stock_quantity']; ?></td>
 						<td>₱ <?php echo $row['stock_price']; ?></td>
-						<td><?php echo $row['supplier_id']; ?></td>
+						<td><?php echo $row['supplier_name']; ?></td>
 						<td>
 							<a class="btn btn-secondary" data-toggle="modal" href="#viewStockModal" data-id="<?php echo $row['stock_id']; ?>">View</a>
 							<a class="btn btn-primary" href="update_stock_admin.php?stockId=<?php echo $row['stock_id']; ?>">Update</a>
@@ -101,8 +106,7 @@
 		<?php include '../includes/footer.php'; ?>
 	</footer>
 
-	<script src="../assets/js/jquery-3.3.1.js"></script>
-	<script src="../assets/js/bootstrap.js"></script>
+	
 	<script>
 		$(document).ready(function(){
 			$('#viewStockModal').on('show.bs.modal', function (e){
@@ -116,6 +120,8 @@
 					}
 				});
 			});
+			
+			$('#stockAdminTable').DataTable();
 		});
 	</script>
 </body>

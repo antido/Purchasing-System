@@ -17,6 +17,10 @@
 	<meta name="vieport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
+	<script src="../assets/js/jquery-3.3.1.js"></script>
+	<script src="../assets/js/datatables.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System - Admin</title>
 </head>
@@ -56,7 +60,7 @@
 				if($result->num_rows > 0){
 				}
 			?>
-			<table class="table table-striped table-bordered">
+			<table class="table table-striped table-bordered" id="publicPurchaseLogsTable">
 				<thead class="thead-dark">
 					<tr>
 						<th>Purchase ID</th>
@@ -87,8 +91,11 @@
 		<?php include '../includes/footer.php'; ?>
 	</footer>
 
-	<script src="../assets/js/jquery-3.3.1.js"></script>
-	<script src="../assets/js/bootstrap.js"></script>
+	<script >
+		$(document).ready(function(){
+			$('#publicPurchaseLogsTable').DataTable();
+		});
+	</script>	
 </body>
 </html>
 

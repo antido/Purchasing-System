@@ -17,6 +17,10 @@
 	<meta name="viewport" content="width=device-width, initial-cale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
+	<script src="../assets/js/jquery-3.3.1.js"></script>
+	<script src="../assets/js/datatables.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
 </head>
@@ -34,6 +38,7 @@
 					</li>
 				</ul>
 			</div>
+			<span class="text-primary">Welcome Admin: <br><center><?php echo $_SESSION['user']; ?></center></span>
 		</nav>
 	</header>
 
@@ -46,8 +51,8 @@
 				if($result->num_rows > 0){
 				}
 			?>
-			<a class="btn btn-success" href="add_supplier_admin.php">Add</a>
-			<table class="table table-striped table-bordered">
+			<a class="btn btn-success mb-2" href="add_supplier_admin.php">Add</a>
+			<table class="table table-striped table-bordered" id="adminSupplierTable">
 				<thead class="thead-dark">
 					<tr>
 						<th>Supplier ID</th>
@@ -79,7 +84,10 @@
 		<?php include '../includes/footer.php'; ?>
 	</footer>
 
-	<script src="../assets/js/jquery-3.3.1.js"></script>
-	<script src="../assets/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#adminSupplierTable').DataTable();
+		});
+	</script>
 </body>
 </html>
