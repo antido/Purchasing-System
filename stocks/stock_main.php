@@ -17,6 +17,10 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
+	<script src="../assets/js/jquery-3.3.1.js"></script>
+	<script src="../assets/js/datatables.js"></script>
+	<script src="../assets/js/bootstrap.js"></script>
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System</title>
 </head>
@@ -34,6 +38,7 @@
 					</li>
 				</ul>
 			</div>
+			<span class="text-success">Welcome User: <br/><center><?php echo $_SESSION['user']; ?></center></span>
 		</nav>
 	</header>
 
@@ -46,7 +51,7 @@
 				if($result->num_rows > 0){
 				}				
 			?>
-			<table class="table table-striped table-bordered">
+			<table class="table table-striped table-bordered" id="stockPublicTable">
 				<thead class="thead-dark">
 					<tr>
 						<th>Stock ID</th>
@@ -97,8 +102,6 @@
 		<?php include '../includes/footer.php'; ?>
 	</footer>
 
-	<script src="../assets/js/jquery-3.3.1.js"></script>
-	<script src="../assets/js/bootstrap.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#purchaseModal').on('show.bs.modal', function (e){
@@ -112,6 +115,8 @@
 					}
 				});
 			});
+
+			$('#stockPublicTable').DataTable();
 		});
 	</script>
 </body>
