@@ -31,11 +31,14 @@
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" href="main.php">Main</a>
+						<a class="nav-link active" href="main.php">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../stocks/stock_main.php">Stocks</a>
 					</li>		
+					<li class="nav-item">
+						<a class="nav-link" href="change_account.php">Change Credentials</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="model/logout.php">Logout</a>
 					</li>		
