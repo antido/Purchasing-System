@@ -79,7 +79,7 @@
 						<td><?php echo $row['purchase_createdDate']; ?></td>
 						<td><?php echo $row['stock_name']; ?></td>
 						<td><?php echo $row['purchase_quantity']; ?></td>
-						<td><?php echo $row['purchase_quantity'] * $row['stock_price']; ?> </td>
+						<td>₱ <?php echo $row['purchase_quantity'] * $row['stock_price']; ?> </td>
 					</tr>
 				</tbody>
 				<?php } ?>
