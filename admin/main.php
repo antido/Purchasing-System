@@ -39,6 +39,7 @@
 							<a class="dropdown-item" href="../stocks/stock_main_admin.php">Stocks</a>	
 							<a class="dropdown-item" href="../supplier/supplier_main_admin.php">Supplier</a>
 							<a class="dropdown-item" href="public_purchase_logs.php">Purchases Logs</a>
+							<a class="dropdown-item" href="#">Activity Logs</a>
 						</div>
 					</li>
 					<li class="nav-item">
@@ -71,8 +72,8 @@
 						<th>Action</th>
 					</tr>
 				</thead>
-				<?php while($row = $result->fetch_assoc()){ ?>
 				<tbody>
+				<?php while($row = $result->fetch_assoc()){ ?>
 					<tr>
 						<td><?php echo $row['user_id']; ?></td>
 						<td><?php echo $row['first_name'] .' '. $row['middle_name'] .' '. $row['last_name']; ?></td>
@@ -85,8 +86,8 @@
 							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="model/delete.php?delete=<?php echo $row['user_id']; ?>">Delete</a>
 						</td>
 					</tr>
-				</tbody>
 				<?php } ?>
+				</tbody>
 			</table>
 		</div>
 	</main>
