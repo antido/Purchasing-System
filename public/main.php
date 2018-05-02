@@ -68,8 +68,8 @@
 						<th>Purchase Total Price</th>
 					</tr>
 				</thead>
-				<?php while($row = $result->fetch_assoc()){ ?>
 				<tbody>
+				<?php while($row = $result->fetch_assoc()){ ?>
 					<tr>
 						<td><?php echo $row['user_purchase_id']; ?></td>
 						<td><?php echo $row['purchase_createdDate']; ?></td>
@@ -77,8 +77,8 @@
 						<td><?php echo $row['purchase_quantity']; ?></td>
 						<td>₱ <?php echo $row['purchase_quantity'] * $row['stock_price']; ?></td>
 					</tr>
-				</tbody>
 				<?php } ?>
+				</tbody>
 			</table>
 		</div>
 	</main>

@@ -62,8 +62,8 @@
 						<th>Action</th>
 					</tr>
 				</thead>
-				<?php while($row = $result->fetch_assoc()) { ?>
 				<tbody>
+				<?php while($row = $result->fetch_assoc()) { ?>
 					<tr>
 						<td><?php echo $row['stock_id']; ?></td>
 						<td><?php echo $row['stock_name']; ?></td>
@@ -74,8 +74,8 @@
 							<a class="btn btn-success" data-toggle="modal" href="#purchaseModal" data-id="<?php echo $row['stock_id']; ?>">Purchase</a>
 						</td>
 					</tr>
-				</tbody>
 				<?php } ?>
+				</tbody>
 			</table>
 		</div>
 	</main>

@@ -62,8 +62,8 @@
 						<th>Action</th>
 					</tr>
 				</thead>
-				<?php while($row = $result->fetch_assoc()) { ?>
 				<tbody>
+				<?php while($row = $result->fetch_assoc()) { ?>
 					<tr>
 						<td><?php echo $row['supplier_id']; ?></td>
 						<td><?php echo $row['supplier_name']; ?></td>
@@ -74,8 +74,8 @@
 							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="model/delete_supplier.php?delete=<?php echo $row['supplier_id']; ?>">Delete</a>
 						</td>
 					</tr>
-				</tbody>
 				<?php } ?>
+				</tbody>
 			</table>
 		</div>
 	</main>
