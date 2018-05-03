@@ -33,15 +33,14 @@
 					<li class="nav-item">
 						<a class="nav-link active" href="main.php">Home</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../stocks/stock_main.php">Stocks</a>
-					</li>		
-					<li class="nav-item">
-						<a class="nav-link" href="change_account.php">Change Credentials</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="publicActionsDropdownMenu" data-toggle="dropdown">Actions</a>
+						<div class="dropdown-menu" aria-labelledby="publicActionsDropdownMenu">
+							<a class="dropdown-item" href="../stocks/stock_main.php">Purchase Stocks</a>
+							<a class="dropdown-item" href="change_account.php">Update Account</a>
+							<a class="dropdown-item" href="model/logout.php">Logout</a>
+						</div>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="model/logout.php">Logout</a>
-					</li>		
 				</ul>
 			</div>
 			<span class="text-success">Welcome User: <br/><center><?php echo $_SESSION['user']; ?></center></span>
