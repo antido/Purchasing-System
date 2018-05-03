@@ -39,7 +39,7 @@
 							<a class="dropdown-item" href="../stocks/stock_main_admin.php">Stocks</a>	
 							<a class="dropdown-item" href="../supplier/supplier_main_admin.php">Supplier</a>
 							<a class="dropdown-item" href="public_purchase_logs.php">Purchases Logs</a>
-							<a class="dropdown-item" href="#">Activity Logs</a>
+							<a class="dropdown-item" href="activity_logs.php">Activity Logs</a>
 						</div>
 					</li>
 					<li class="nav-item">
