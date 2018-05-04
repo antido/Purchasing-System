@@ -22,6 +22,9 @@
 			$sql2 = "INSERT INTO accounts (user_id, username, password, account_type, createdDate, updatedDate) VALUES ((SELECT user_id FROM users WHERE user_id = '$userID'), '$contactNum', '$lName', 'Public', now(), now())";
 			$result2 = mysqli_query($conn, $sql2);
 
+			$sql3 = "INSERT INTO activity (user_id, activity_description, activity_createdDate, activity_updatedDate) VALUES ('".$_SESSION['userId']."', 'Added Public Account', now(), now())";
+			$result3 = mysqli_query($conn, $sql3);
+
 			header('Location: ../main.php?add_user=success');
 			exit();
 		}

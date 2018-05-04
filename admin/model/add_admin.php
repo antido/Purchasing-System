@@ -23,6 +23,9 @@
 			$sql2 = "INSERT INTO accounts (user_id, username, password, account_type, createdDate, updatedDate) VALUES ('$userId', '$username', '$password', 'Admin', now(), now())";
 			$result2 = mysqli_query($conn, $sql2);
 
+			$sql3 = "INSERT INTO activity (user_id, activity_description, activity_createdDate, activity_updatedDate) VALUES ('".$_SESSION['userId']."', 'Added Admin Account', now(), now())";
+			$result3 = mysqli_query($conn, $sql3);
+
 			header('Location: ../main.php?add_admin=success');
 			exit();
 		}

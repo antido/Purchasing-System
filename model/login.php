@@ -16,12 +16,18 @@
 			$_SESSION['logged_in'] = true;
 			$_SESSION['userId'] = $row['user_id'];
 
+			$sql = "INSERT INTO activity (user_id, activity_description, activity_createdDate, activity_updatedDate) VALUES ('".$_SESSION['userId']."', 'Logged In', now(), now())";
+			$result = mysqli_query($conn, $sql);
+
 			header('Location: ../public/main.php?login=success');
 			exit();
 		}else if($count == 1 && $row['account_type'] == 'Admin'){
 			$_SESSION['user'] = $user;
 			$_SESSION['logged_in'] = true;
 			$_SESSION['userId'] = $row['user_id'];
+
+			$sql = "INSERT INTO activity (user_id, activity_description, activity_createdDate, activity_updatedDate) VALUES ('".$_SESSION['userId']."', 'Logged In', now(), now())";
+			$result = mysqli_query($conn, $sql);
 
 			header('Location: ../admin/main.php?login=success');
 			exit();
