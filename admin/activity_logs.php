@@ -54,7 +54,7 @@
 	<main> 
 		<div class="container-fluid mt-5">
 			<?php
-				$sql = "SELECT * FROM activity a INNER JOIN users u ON a.user_id = u.user_id";
+				$sql = "SELECT * FROM activity a INNER JOIN users u ON a.user_id = u.user_id INNER JOIN accounts ac ON u.user_id = ac.user_id";
 				$result = mysqli_query($conn, $sql);
 
 				if($result->num_rows > 0){
@@ -64,15 +64,17 @@
 				<thead class="thead-dark">
 					<tr>
 						<th>Activity ID</th>
+						<th>Account Type</th>
 						<th>User Name</th>
 						<th>Activity Description</th>
-						<th>Activity Date</th>
+						<th>Activity Date and Time</th>
 					</tr>
 				</thead>
 				<tbody>
 				<?php while($row = $result->fetch_assoc()) { ?>
 					<tr>
 						<td><?php echo $row['activity_id']; ?></td>
+						<td><?php echo $row['account_type']; ?></td>
 						<td><?php echo $row['first_name'].' '.$row['middle_name'].' '.$row['last_name']; ?></td>
 						<td><?php echo $row['activity_description']; ?></td>
 						<td><?php echo $row['activity_createdDate']; ?></td>
