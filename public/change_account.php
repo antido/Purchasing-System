@@ -36,8 +36,9 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle active" href="#" id="publicActionsDropdownMenu" data-toggle="dropdown">Actions</a>
 						<div class="dropdown-menu" aria-labelledby="publicActionsDropdownMenu">
-							<a class="dropdown-item" href="../stocks/stock_main.php">Stocks</a>
+							<a class="dropdown-item" href="../stocks/stock_main.php">Purchase Stocks</a>
 							<a class="dropdown-item active" href="change_account.php">Update Account</a>
+							<a class="dropdown-item" href="#">Delete Account</a>
 							<a class="dropdown-item" href="model/logout.php">Logout</a>
 						</div>
 					</li>
