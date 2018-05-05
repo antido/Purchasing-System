@@ -34,16 +34,15 @@
 						<a class="nav-link active" href="main.php">Main</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="inventoryDropdownMenuLink" data-toggle="dropdown">Inventory</a>
-						<div class="dropdown-menu" aria-labelledby="inventoryDropdownMenuLink">
+						<a class="nav-link dropdown-toggle" href="#" id="actionDropdownMenuLink" data-toggle="dropdown">Action</a>
+						<div class="dropdown-menu" aria-labelledby="actionDropdownMenuLink">
 							<a class="dropdown-item" href="../stocks/stock_main_admin.php">Stocks</a>	
 							<a class="dropdown-item" href="../supplier/supplier_main_admin.php">Supplier</a>
 							<a class="dropdown-item" href="public_purchase_logs.php">Purchases Logs</a>
-							<a class="dropdown-item" href="activity_logs.php">Activity Logs</a>
+							<a class="dropdown-item" href="admin_activity_logs.php">Admin Activity Logs</a>
+							<a class="dropdown-item" href="public_activity_logs.php">Public Activity Logs</a>
+							<a class="dropdown-item" href="model/logout.php">Logout</a>
 						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="model/logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
