@@ -14,13 +14,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="vieport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
 	<script src="../assets/js/jquery-3.3.1.js"></script>
-	<script src="../assets/js/datatables.js"></script>
 	<script src="../assets/js/bootstrap.js"></script>
+	<script src="../assets/js/datatables.js"></script>
 	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	<title>Purchasing System - Admin</title>
 </head>
@@ -30,56 +30,53 @@
 			<a class="navbar-brand" href="main.php">Admin</a>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav">
-					<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link" href="main.php">Main</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle active" href="#" id="actionDropdownMenuLink" data-toggle="dropdown">Action</a>
 						<div class="dropdown-menu" aria-labelledby="actionDropdownMenuLink">
-							<a class="dropdown-item" href="../stocks/stock_main_admin.php">Stocks</a>	
+							<a class="dropdown-item" href="../stocks/stock_main_admin.php">Stocks</a>
 							<a class="dropdown-item" href="../supplier/supplier_main_admin.php">Supplier</a>
-							<a class="dropdown-item active" href="public_purchase_logs.php">Purchases Logs</a>
-							<a class="dropdown-item" href="admin_activity_logs.php">Admin Activity Logs</a>
+							<a class="dropdown-item" href="public_purchase_logs.php">Purchases Logs</a>
+							<a class="dropdown-item active" href="admin_activity_logs.php">Admin Activity Logs</a>
 							<a class="dropdown-item" href="public_activity_logs.php">Public Activity Logs</a>
 							<a class="dropdown-item" href="model/logout.php">Logout</a>
 						</div>
 					</li>
 				</ul>
 			</div>
-			<span class="text-primary">Welcome Admin: <br/><center><?php echo $_SESSION['user']; ?></center></span>
+			<span class="text-primary">Welcome Admin: <center><?php echo $_SESSION['user']; ?></center></span>
 		</nav>
 	</header>
 
-	<main>
+	<main> 
 		<div class="container-fluid mt-5">
 			<?php
-				$sql = "SELECT * FROM user_purchase up INNER JOIN stocks s ON up.stock_id = s.stock_id INNER JOIN users u ON up.user_id = u.user_id";
+				$sql = "SELECT * FROM activity a INNER JOIN users u ON a.user_id = u.user_id INNER JOIN accounts ac ON u.user_id = ac.user_id WHERE ac.account_type = 'Admin'";
 				$result = mysqli_query($conn, $sql);
 
 				if($result->num_rows > 0){
 				}
 			?>
-			<table class="table table-striped table-bordered" id="publicPurchaseLogsTable">
+			<table class="table table-striped table-bordered" id="adminActivityLogsTable">
 				<thead class="thead-dark">
 					<tr>
-						<th>Purchase ID</th>
-						<th>Buyer Name</th>
-						<th>Purchase Date</th>
-						<th>Purchase Name</th>
-						<th>Purchase Quantity</th>
-						<th>Purchase Total Price</th>
+						<th>Activity ID</th>
+						<th>Account Type</th>
+						<th>User Name</th>
+						<th>Activity Description</th>
+						<th>Activity Date and Time</th>
 					</tr>
 				</thead>
 				<tbody>
 				<?php while($row = $result->fetch_assoc()) { ?>
 					<tr>
-						<td><?php echo $row['user_purchase_id']; ?></td>
-						<td><?php echo $row['first_name'] .' '. $row['middle_name'] .' '.$row['last_name']; ?></td>
-						<td><?php echo $row['purchase_createdDate']; ?></td>
-						<td><?php echo $row['stock_name']; ?></td>
-						<td><?php echo $row['purchase_quantity']; ?></td>
-						<td>₱ <?php echo $row['purchase_quantity'] * $row['stock_price']; ?> </td>
+						<td><?php echo $row['activity_id']; ?></td>
+						<td><?php echo $row['account_type']; ?></td>
+						<td><?php echo $row['first_name'].' '.$row['middle_name'].' '.$row['last_name']; ?></td>
+						<td><?php echo $row['activity_description']; ?></td>
+						<td><?php echo $row['activity_createdDate']; ?></td>
 					</tr>
 				<?php } ?>
 				</tbody>
@@ -91,27 +88,10 @@
 		<?php include '../includes/footer.php'; ?>
 	</footer>
 
-	<script >
+	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#publicPurchaseLogsTable').DataTable();
+			$('#adminActivityLogsTable').DataTable();
 		});
-	</script>	
+	</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
