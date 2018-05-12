@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<script src="../assets/js/jquery-3.3.1.js"></script>
 	<script src="../assets/js/datatables.js"></script>
 	<script src="../assets/js/bootstrap.js"></script>
@@ -51,7 +52,7 @@
 				if($result->num_rows > 0){
 				}
 			?>
-			<a class="btn btn-success mb-2" href="add_stock_admin.php">Add</a>
+			<a class="btn btn-success mb-2" href="add_stock_admin.php"><i class="fas fa-plus"></i></a>
 			<table class="table table-striped table-bordered" id="stockAdminTable">
 				<thead class="thead-dark">
 					<tr>
@@ -72,9 +73,9 @@
 						<td>₱ <?php echo $row['stock_price']; ?></td>
 						<td><?php echo $row['supplier_name']; ?></td>
 						<td>
-							<a class="btn btn-secondary" data-toggle="modal" href="#viewStockModal" data-id="<?php echo $row['stock_id']; ?>">View</a>
-							<a class="btn btn-primary" href="update_stock_admin.php?stockId=<?php echo $row['stock_id']; ?>">Update</a>
-							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="model/delete_stock.php?stockId=<?php echo $row['stock_id']; ?>">Delete</a>
+							<a class="btn btn-secondary" data-toggle="modal" href="#viewStockModal" data-id="<?php echo $row['stock_id']; ?>"><i class="fas fa-eye"></i></a>
+							<a class="btn btn-primary" href="update_stock_admin.php?stockId=<?php echo $row['stock_id']; ?>"><i class="fas fa-pencil-alt"></i></a>
+							<a class="btn btn-danger" onclick="return confirm('Are you sure ?');" href="model/delete_stock.php?stockId=<?php echo $row['stock_id']; ?>"><i class="fas fa-trash-alt"></i></a>
 						</td>
 					</tr>
 				<?php } ?>

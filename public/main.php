@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="../assets/js/jquery-3.3.1.js"></script>
 	<script src="../assets/js/datatables.js"></script>
 	<script src="../assets/js/bootstrap.js"></script>
